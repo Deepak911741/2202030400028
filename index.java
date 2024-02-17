@@ -1,7 +1,0 @@
-/**
- * index
- */
-public class index {
-
-    
-}
