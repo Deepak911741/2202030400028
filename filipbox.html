@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Flip Animation</title>
+  <style>
+    body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+}
+
+.flip-box {
+  width: 200px;
+  height: 200px;
+  perspective: 1000px;
+}
+
+.flip-box-inner {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.flip-box:hover .flip-box-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-box-front,
+.flip-box-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  color: white;
+  background-color: #3498db;
+}
+
+.flip-box-back {
+  transform: rotateY(180deg);
+  background-color: #e74c3c;
+}
+
+  </style>
+</head>
+<body>
+  <div class="flip-box" id="flipBox">
+    <div class="flip-box-inner">
+        <div class="flip-box-front">
+          <img src="image1.jpg" alt=""  width="200px" height="200px">
+          fornt
+      </div>
+      <div class="flip-box-back">
+        <img src="image2.jpg" alt="" width="200px" height="200px">
+        back
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

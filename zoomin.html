@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .zoomable-content {
+            transition: transform 0.2s ease;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="zoomInBtn">Zoom In</button>
+    <button id="zoomOutBtn">Zoom Out</button>
+    <div class="zoomable-content">
+
+    </div>
+    <script>
+        const zoomInBtn = document.getElementById('zoomInBtn');
+        const zoomOutBtn = document.getElementById('zoomOutBtn');
+        const zoomableContent = document.querySelector('.zoomable-content');
+        let currentZoomLevel = 1;
+
+        zoomInBtn.addEventListener('click', () => {
+            currentZoomLevel += 0.1;
+            zoomableContent.style.transform = `scale(${currentZoomLevel})`;
+        });
+
+        zoomOutBtn.addEventListener('click', () => {
+            currentZoomLevel -= 0.1;
+            zoomableContent.style.transform = `scale(${currentZoomLevel})`;
+        });
+
+    </script>
+</body>
+
+</html>
